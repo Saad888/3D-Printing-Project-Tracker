@@ -4,14 +4,13 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import _ from 'lodash'
-import { Part } from '@/models/part'
 import Link from 'next/link'
 
 var SAVE_TIMEOUT = 3000
 
 let pageTimeout: any = null
 
-export default function () {
+export default function ProjectPage () {
   const [project, setProject] = useState<Project | null>(null)
   const [printers, setPrinters] = useState([])
   const router = useRouter()

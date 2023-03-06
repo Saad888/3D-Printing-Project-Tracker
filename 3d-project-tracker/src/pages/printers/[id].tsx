@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-export default function () {
+export default function PrintersPage () {
   var [name, setName] = useState('')
   var [link, setLink] = useState('')
   const [loaded, setLoaded] = useState(false)
