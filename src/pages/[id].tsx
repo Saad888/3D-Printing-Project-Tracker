@@ -217,24 +217,24 @@ const ResultsComponent = ({ project }: any) => {
   const printers: any = {}
   for (const p of project.parts) {
     if (!(p.color in colors)) colors[p.color] = { weight: 0, time: 0 }
-    colors[p.color].weight += p.weight
-    colors[p.color].time += p.time
+    colors[p.color].weight += p.weight * p.number
+    colors[p.color].time += p.time * p.number
 
     if (!(p.material in materials))
       materials[p.material] = { weight: 0, time: 0 }
-    materials[p.material].weight += p.weight
-    materials[p.material].time += p.time
+    materials[p.material].weight += p.weight * p.number
+    materials[p.material].time += p.time * p.number
 
     if (!(p.printer in printers)) printers[p.printer] = { weight: 0, time: 0 }
-    printers[p.printer].weight += p.weight
-    printers[p.printer].time += p.time
+    printers[p.printer].weight += p.weight * p.number
+    printers[p.printer].time += p.time * p.number
   }
 
   let weight = 0
   let time = 0
   for (const p of project.parts) {
-    weight += p.weight
-    time += p.time
+    weight += p.weight * p.number
+    time += p.time * p.number
   }
 
   return (
@@ -385,7 +385,7 @@ const PartComponent = ({ part, onUpdate, index, printers }: any) => {
         </div>
       </td>
       <td>
-        <div className='ui input shorter-input'>
+        <div className='ui input shortish-input'>
           <input
             type='number'
             min={0}

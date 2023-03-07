@@ -22,6 +22,10 @@ label {
   width: 60px !important;
 }
 
+.shortish-input {
+  width: 70px !important;
+}
+
 .short-input {
   width: 100px !important;
 }
